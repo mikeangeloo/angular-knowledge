@@ -3,6 +3,7 @@ import {PermissionBase} from '../models/permission-base';
 import {PermissionType} from '../models/permission-type';
 import {PermissionsFactory} from '../factory/permissions-factory.';
 import {Role} from '../models/role';
+import {Resource} from '../models/resource';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,18 @@ import {Role} from '../models/role';
 export class PermissionManagerServiceService {
 
   private permissions: PermissionBase;
-  constructor() { }
+  constructor() {
+    this.permissions = PermissionsFactory.getInstance();
+  }
 
-  isGranted(permission: PermissionType) {
-    const permissions = PermissionsFactory.getInstance().permissions;
-    for (const perm of permissions) {
-      if (perm === permission) {
-        return true;
+  isGranted(resource: Resource, permission: PermissionType) {
+    for (const res of this.permissions.permissions) {
+      if (resource === res.resource) {
+        for (const perm of res.permissions) {
+          if (perm === permission) {
+            return true;
+          }
+        }
       }
     }
     return false;

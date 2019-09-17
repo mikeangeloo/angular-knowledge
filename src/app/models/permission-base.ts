@@ -1,6 +1,7 @@
 import {PermissionType} from './permission-type';
+import {Permission} from './permission';
 
 export abstract class PermissionBase {
-  public permissions: PermissionType[];
+  public permissions: Permission[];
   constructor() {}
 }

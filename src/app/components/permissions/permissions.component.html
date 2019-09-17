@@ -1,0 +1,24 @@
+<h3 class="text-center mt-3"> Granted for: </h3>
+
+<hr>
+
+<div class="text-center mt-3">
+
+  <div *ngFor="let permission of permissionKeys()" class="row-fluid">
+    <div class="col mb-3" *appIsGranted="[resource, permission]">
+      <div class="card text-white bg-success"
+           [ngClass]="{
+          'bg-success': permission  == 'CREATE',
+          'bg-secondary': permission  == 'READ',
+          'bg-primary': permission  == 'UPDATE',
+          'bg-danger': permission  == 'DELETE',
+          'bg-warning': permission  == 'ORDER'
+          }">
+        <div class="card-body">
+          <h5 class="card-title"> {{ permission }} </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -37,8 +37,4 @@ export class AppComponent implements OnInit {
     return localStorage.getItem('role');
   }
 
-  getPermission() {
-    this.permissions = this.userS.getPermission();
-    console.log(this.permissions);
-  }
 }
