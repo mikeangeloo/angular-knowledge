@@ -1,0 +1,40 @@
+<form [formGroup]="form" class="normal-form">
+<mat-grid-list cols="2" rowHeight="300px">
+  <mat-grid-tile>
+    <div class="controles-container">
+      <input type="hidden" formControlName="$key">
+      <mat-form-field>
+        <input formControlName="fullName" matInput placeholder="Full Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="mobile" matInput placeholder="Mobile">
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="city" matInput placeholder="City">
+      </mat-form-field>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="controles-container">
+      <div class="add-bottom-padding">
+        <mat-radio-group>
+          <mat-radio-button value="1">Male</mat-radio-button>
+          <mat-radio-button value="2">Female</mat-radio-button>
+          <mat-radio-button value="3">Other</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <mat-form-field>
+        <mat-select formControlName="department" placeholder="Department">
+          <mat-option>None</mat-option>
+          <ng-container *ngFor="let department of departments">
+            <mat-option value="{{department.id}}">{{department.value}}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+</form>
