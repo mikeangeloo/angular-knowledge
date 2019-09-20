@@ -4,13 +4,17 @@
     <div class="controles-container">
       <input type="hidden" formControlName="$key">
       <mat-form-field>
-        <input formControlName="fullName" matInput placeholder="Full Name">
+        <input formControlName="fullName" matInput placeholder="Full Name*">
+        <mat-error>This field is mandatory</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input formControlName="email" matInput placeholder="Email">
+        <mat-error>Invalid email address</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input formControlName="mobile" matInput placeholder="Mobile">
+        <input formControlName="mobile" matInput placeholder="Mobile*">
+        <mat-error *ngIf="form.controls['mobile'].errors?.required">This field is mandatory</mat-error>
+        <mat-error *ngIf="form.controls['mobile'].errors?.minlength">Minimum 8 characters needed</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input formControlName="city" matInput placeholder="City">
@@ -34,6 +38,18 @@
           </ng-container>
         </mat-select>
       </mat-form-field>
+      <mat-form-field>
+        <input formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div class="add-bottom-padding">
+        <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
+      </div>
+      <div class="button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+        <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+      </div>
     </div>
   </mat-grid-tile>
 </mat-grid-list>

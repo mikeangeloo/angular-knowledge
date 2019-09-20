@@ -16,6 +16,10 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatInputModule,
     Material.MatRadioModule,
     Material.MatSelectModule,
+    Material.MatDatepickerModule,
+    Material.MatNativeDateModule,
+    Material.MatCheckboxModule,
+    Material.MatButtonModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
 
@@ -27,6 +31,10 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatInputModule,
     Material.MatRadioModule,
     Material.MatSelectModule,
+    Material.MatDatepickerModule,
+    Material.MatNativeDateModule,
+    Material.MatButtonModule,
+    Material.MatCheckboxModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
   ]
