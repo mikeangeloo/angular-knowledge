@@ -15,6 +15,7 @@ export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['email', 'fullName', 'mobile', 'city', 'actions'];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  searchKey: string;
 
   ngOnInit() {
     this.service.getEmployees().subscribe(

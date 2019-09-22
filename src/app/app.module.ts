@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { EmployessComponent } from './employess/employess.component';
 import { EmployeeComponent } from './employess/employee/employee.component';
 import {MaterialModule} from './material/material.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {environment} from '../environments/environment';
 
 import {AngularFireModule} from 'angularfire2';
@@ -28,6 +28,7 @@ import {EmployeeListComponent} from './employess/employee-list/employee-list.com
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
 
