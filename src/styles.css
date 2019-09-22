@@ -33,9 +33,14 @@ mat-radio-group mat-radio-button {
   margin: 5px;
 }
 
-/* Notification classs */
+/* Notification class */
 snack-bar-container.success {
   background-color: #5cb85c;
+  color: #fff;
+}
+
+snack-bar-container.warn {
+  background-color: #f99157;
   color: #fff;
 }
 
@@ -79,5 +84,13 @@ mat-footer-row mat-footer-cell {
 .search-form-field div.mat-form-field-suffix button{
   height: 32px;
   width: 32px;
+}
+
+/* for dialog pop-up*/
+.btn-dialog-close {
+  width: 45px;
+  min-width: 0 !important;
+  height: 40px;
+  padding: 0 !important;
 }
 
