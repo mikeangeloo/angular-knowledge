@@ -7,6 +7,11 @@ import { EmployessComponent } from './employess/employess.component';
 import { EmployeeComponent } from './employess/employee/employee.component';
 import {MaterialModule} from './material/material.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {environment} from '../environments/environment';
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -19,10 +24,12 @@ import {ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
 
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

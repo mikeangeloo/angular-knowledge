@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="normal-form">
+<form [formGroup]="form" class="normal-form" (submit)="onSubmit()">
 <mat-grid-list cols="2" rowHeight="300px">
   <mat-grid-tile>
     <div class="controles-container">
@@ -24,7 +24,7 @@
   <mat-grid-tile>
     <div class="controles-container">
       <div class="add-bottom-padding">
-        <mat-radio-group>
+        <mat-radio-group formControlName="gender">
           <mat-radio-button value="1">Male</mat-radio-button>
           <mat-radio-button value="2">Female</mat-radio-button>
           <mat-radio-button value="3">Other</mat-radio-button>
@@ -33,13 +33,13 @@
       <mat-form-field>
         <mat-select formControlName="department" placeholder="Department">
           <mat-option>None</mat-option>
-          <ng-container *ngFor="let department of departments">
-            <mat-option value="{{department.id}}">{{department.value}}</mat-option>
+          <ng-container *ngFor="let department of departmentService.array">
+            <mat-option value="{{department.$key}}">{{department.code}}-{{department.name}}</mat-option>
           </ng-container>
         </mat-select>
       </mat-form-field>
       <mat-form-field>
-        <input formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+        <input matInput [matDatepicker]="picker" placeholder="Hire Date" formControlName="hireDate" >
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>

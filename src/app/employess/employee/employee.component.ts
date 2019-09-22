@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {EmployeeService} from '../../shared/employee.service';
+import {DepartmentService} from '../../shared/department.service';
+import {NotificationService} from '../../shared/notification.service';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  styleUrls: ['./employee.component.css'],
 })
 export class EmployeeComponent implements OnInit {
-  constructor() { }
-
-  departments = [
-    {id: 1, value: 'Dep 1'},
-    {id: 2, value: 'Dep 2'},
-    {id: 2, value: 'Dep 3'}
-  ];
+  constructor(
+    private employeeService: EmployeeService,
+    private departmentService: DepartmentService,
+    private notificationService: NotificationService
+  ) { }
 
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
@@ -28,6 +29,7 @@ export class EmployeeComponent implements OnInit {
   });
 
   ngOnInit() {
+    this.employeeService.getEmployees();
   }
 
   onClear() {
@@ -47,5 +49,14 @@ export class EmployeeComponent implements OnInit {
       hireDate: '',
       isPermanent: false
     });
+  }
+  onSubmit() {
+    if (this.form.valid) {
+      // console.log(this.form.value);
+      this.employeeService.insertEmployee(this.form.value);
+      this.form.reset();
+      this.initializeFormGroup();
+      this.notificationService.success('Submitted successfully');
+    }
   }
 }
