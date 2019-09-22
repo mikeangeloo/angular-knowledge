@@ -34,6 +34,7 @@ import {EmployeeListComponent} from './employess/employee-list/employee-list.com
 
   ],
   providers: [DatePipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EmployeeComponent]
 })
 export class AppModule { }

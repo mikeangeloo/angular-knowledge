@@ -25,6 +25,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatIconModule,
     Material.MatPaginatorModule,
     Material.MatSortModule,
+    Material.MatDialogModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
 
@@ -45,6 +46,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatIconModule,
     Material.MatPaginatorModule,
     Material.MatSortModule,
+    Material.MatDialogModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
   ]
