@@ -1,4 +1,7 @@
-<form [formGroup]="form" class="normal-form" (submit)="onSubmit()">
+<mat-toolbar>
+  <span>{{employeeService.form.controls['$key'].value?"Modify Employee":"New Employee"}}</span>
+</mat-toolbar>
+<form [formGroup]="employeeService.form" class="normal-form" (submit)="onSubmit()">
 <mat-grid-list cols="2" rowHeight="300px">
   <mat-grid-tile>
     <div class="controles-container">
@@ -13,8 +16,8 @@
       </mat-form-field>
       <mat-form-field>
         <input formControlName="mobile" matInput placeholder="Mobile*">
-        <mat-error *ngIf="form.controls['mobile'].errors?.required">This field is mandatory</mat-error>
-        <mat-error *ngIf="form.controls['mobile'].errors?.minlength">Minimum 8 characters needed</mat-error>
+        <mat-error *ngIf="employeeService.form.controls['mobile'].errors?.required">This field is mandatory</mat-error>
+        <mat-error *ngIf="employeeService.form.controls['mobile'].errors?.minlength">Minimum 8 characters needed</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input formControlName="city" matInput placeholder="City">
@@ -47,7 +50,7 @@
         <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
       </div>
       <div class="button-row">
-        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="employeeService.form.invalid">Submit</button>
         <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
       </div>
     </div>
