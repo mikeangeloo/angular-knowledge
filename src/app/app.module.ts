@@ -12,13 +12,16 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {DatePipe} from '@angular/common';
+import {EmployeeListComponent} from './employess/employee-list/employee-list.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployessComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,

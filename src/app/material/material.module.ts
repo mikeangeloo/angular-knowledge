@@ -21,6 +21,10 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatCheckboxModule,
     Material.MatButtonModule,
     Material.MatSnackBarModule,
+    Material.MatTableModule,
+    Material.MatIconModule,
+    Material.MatPaginatorModule,
+    Material.MatSortModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
 
@@ -37,6 +41,10 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatButtonModule,
     Material.MatCheckboxModule,
     Material.MatSnackBarModule,
+    Material.MatTableModule,
+    Material.MatIconModule,
+    Material.MatPaginatorModule,
+    Material.MatSortModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
   ]

@@ -44,3 +44,13 @@ snack-bar-container.notification simple-snack-bar{
   font-weight: bold;
 }
 
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+}
+
