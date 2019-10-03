@@ -26,6 +26,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatPaginatorModule,
     Material.MatSortModule,
     Material.MatDialogModule,
+    Material.MatDividerModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
 
@@ -47,6 +48,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     Material.MatPaginatorModule,
     Material.MatSortModule,
     Material.MatDialogModule,
+    Material.MatDividerModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
   ]

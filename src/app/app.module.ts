@@ -13,6 +13,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {DatePipe} from '@angular/common';
 import {EmployeeListComponent} from './employess/employee-list/employee-list.component';
+import {AlertModule} from './component/alert/alert.module';
 
 
 
@@ -30,7 +31,8 @@ import {EmployeeListComponent} from './employess/employee-list/employee-list.com
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AlertModule
 
   ],
   providers: [DatePipe],
